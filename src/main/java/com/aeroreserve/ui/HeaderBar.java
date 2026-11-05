@@ -20,6 +20,11 @@ public class HeaderBar {
 
     private HBox bar;
 
+    private Button searchNavBtn;
+    private Button myBookingsBtn;
+    private Button adminDashBtn;
+    private Button customerViewBtn;
+
     /**
      * Constructs the header bar for the given logged-in user.
      * 
@@ -39,33 +44,55 @@ public class HeaderBar {
         bar.getStyleClass().add("app-header");
         bar.setAlignment(Pos.CENTER_LEFT);
 
-        // Logo
+        // Logo (Clickable to return Home)
         Label logoLabel = new Label("✈  AeroReserve");
         logoLabel.getStyleClass().add("header-logo-text");
+        logoLabel.setStyle("-fx-cursor: hand;");
+        logoLabel.setOnMouseClicked(e -> {
+            if ("ADMIN".equals(user.getRole())) {
+                setActiveTab("ADMIN");
+                AeroReserveApp.showScreen(new AdminScreen().getView());
+            } else {
+                setActiveTab("SEARCH");
+                AeroReserveApp.showScreen(new SearchScreen().getView());
+            }
+        });
 
         // Customer and Admin navigation buttons
         HBox navBox = new HBox(10);
         navBox.setAlignment(Pos.CENTER_LEFT);
         if (user.getRole().equals("CUSTOMER")) {
-            Button searchNavBtn = new Button("Search Flights");
-            searchNavBtn.getStyleClass().add("header-nav-btn");
-            searchNavBtn.setOnAction(e -> AeroReserveApp.showScreen(new SearchScreen().getView()));
+            searchNavBtn = new Button("Search Flights");
+            searchNavBtn.getStyleClass().addAll("header-nav-btn", "header-nav-btn-active");
+            searchNavBtn.setOnAction(e -> {
+                setActiveTab("SEARCH");
+                AeroReserveApp.showScreen(new SearchScreen().getView());
+            });
 
-            Button myBookingsBtn = new Button("My Bookings");
+            myBookingsBtn = new Button("My Bookings");
             myBookingsBtn.getStyleClass().add("header-nav-btn");
-            myBookingsBtn.setOnAction(e -> AeroReserveApp.showScreen(new MyBookingsScreen().getView()));
+            myBookingsBtn.setOnAction(e -> {
+                setActiveTab("BOOKINGS");
+                AeroReserveApp.showScreen(new MyBookingsScreen().getView());
+            });
 
             navBox.getChildren().addAll(searchNavBtn, myBookingsBtn);
         } else if (user.getRole().equals("ADMIN")) {
-            Button adminDashBtn = new Button("Admin Dashboard");
+            adminDashBtn = new Button("Admin Dashboard");
             adminDashBtn.getStyleClass().addAll("header-nav-btn", "header-nav-btn-active");
-            adminDashBtn.setOnAction(e -> AeroReserveApp.showScreen(new AdminScreen().getView()));
+            adminDashBtn.setOnAction(e -> {
+                setActiveTab("ADMIN");
+                AeroReserveApp.showScreen(new AdminScreen().getView());
+            });
 
-            Button searchNavBtn = new Button("Customer View (Search)");
-            searchNavBtn.getStyleClass().add("header-nav-btn");
-            searchNavBtn.setOnAction(e -> AeroReserveApp.showScreen(new SearchScreen().getView()));
+            customerViewBtn = new Button("Customer View (Search)");
+            customerViewBtn.getStyleClass().add("header-nav-btn");
+            customerViewBtn.setOnAction(e -> {
+                setActiveTab("CUSTOMER_VIEW");
+                AeroReserveApp.showScreen(new SearchScreen().getView());
+            });
 
-            navBox.getChildren().addAll(adminDashBtn, searchNavBtn);
+            navBox.getChildren().addAll(adminDashBtn, customerViewBtn);
         }
 
         // Spacer between navigation and user controls
@@ -91,6 +118,26 @@ public class HeaderBar {
         logoutBtn.setOnAction(e -> AeroReserveApp.showLoginScreen());
 
         bar.getChildren().addAll(logoLabel, navBox, spacer, userChip, logoutBtn);
+    }
+
+    /**
+     * Updates navigation button active styles.
+     */
+    public void setActiveTab(String tab) {
+        if (searchNavBtn != null) searchNavBtn.getStyleClass().remove("header-nav-btn-active");
+        if (myBookingsBtn != null) myBookingsBtn.getStyleClass().remove("header-nav-btn-active");
+        if (adminDashBtn != null) adminDashBtn.getStyleClass().remove("header-nav-btn-active");
+        if (customerViewBtn != null) customerViewBtn.getStyleClass().remove("header-nav-btn-active");
+
+        if ("SEARCH".equals(tab) && searchNavBtn != null) {
+            searchNavBtn.getStyleClass().add("header-nav-btn-active");
+        } else if ("BOOKINGS".equals(tab) && myBookingsBtn != null) {
+            myBookingsBtn.getStyleClass().add("header-nav-btn-active");
+        } else if ("ADMIN".equals(tab) && adminDashBtn != null) {
+            adminDashBtn.getStyleClass().add("header-nav-btn-active");
+        } else if ("CUSTOMER_VIEW".equals(tab) && customerViewBtn != null) {
+            customerViewBtn.getStyleClass().add("header-nav-btn-active");
+        }
     }
 
     /**

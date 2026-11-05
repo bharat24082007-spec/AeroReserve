@@ -48,6 +48,9 @@ public class AeroReserveApp extends Application {
 
     // ── Cross-screen shared state ─────────────────────────────────────────────
 
+    /** Persistent top navigation header bar (null when on login screen). */
+    public static HeaderBar headerBar;
+
     /** The user who is currently logged in (null if on login screen). */
     public static User currentUser;
 
@@ -144,6 +147,7 @@ public class AeroReserveApp extends Application {
         pendingPassengers    = null;
         pendingSeatNos       = null;
         pendingBaggageOption = null;
+        headerBar            = null;
 
         rootLayout.setTop(null); // remove header on login screen
         showScreen(new LoginScreen().getView());
@@ -159,7 +163,8 @@ public class AeroReserveApp extends Application {
         currentUser = user;
 
         // Display the persistent top navigation header
-        rootLayout.setTop(new HeaderBar(user).getView());
+        headerBar = new HeaderBar(user);
+        rootLayout.setTop(headerBar.getView());
 
         if (user.getRole().equals("ADMIN")) {
             // Admin goes directly to the Admin Dashboard (Stage 7)

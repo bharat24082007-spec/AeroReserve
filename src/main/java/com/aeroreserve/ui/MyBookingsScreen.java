@@ -42,6 +42,9 @@ public class MyBookingsScreen {
      * Constructs the My Bookings screen.
      */
     public MyBookingsScreen() {
+        if (AeroReserveApp.headerBar != null) {
+            AeroReserveApp.headerBar.setActiveTab("BOOKINGS");
+        }
         createUI();
     }
 

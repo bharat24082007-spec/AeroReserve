@@ -569,55 +569,8 @@ public class PassengerAndSeatScreen {
         AeroReserveApp.pendingSeatNos = new ArrayList<>(selectedSeatNos);
         AeroReserveApp.pendingBaggageOption = selectedBaggage;
 
-        // Transition to Stage 6: Review & Payment Screen
+        // Transition to Review & Payment Screen
         AeroReserveApp.showScreen(new ReviewAndPaymentScreen().getView());
-    }
-
-    /**
-     * Confirmation card showing that Stage 5 is complete and preparing for Stage 6.
-     */
-    private void showStage5Confirmation(ArrayList<Passenger> passengers) {
-        VBox card = new VBox(20);
-        card.getStyleClass().add("card");
-        card.setMaxWidth(640);
-        card.setAlignment(Pos.CENTER);
-        card.setPadding(new Insets(32));
-
-        Label title = new Label("Passenger & Seat Selection Complete!");
-        title.getStyleClass().add("section-title");
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("Flight: ").append(flight.getFlightNo()).append(" (").append(flight.getFrom())
-          .append(" → ").append(flight.getTo()).append(")\n");
-        sb.append("Date: ").append(flight.getDate()).append(" • Baggage: ").append(selectedBaggage).append("\n\n");
-        sb.append("Passengers & Allocated Seats:\n");
-        for (int i = 0; i < passengers.size(); i++) {
-            sb.append("  • ").append(passengers.get(i).getName())
-              .append(" (Age ").append(passengers.get(i).getAge()).append(") — Seat: ")
-              .append(selectedSeatNos.get(i)).append("\n");
-        }
-
-        Label details = new Label(sb.toString());
-        details.setStyle("-fx-font-size: 14; -fx-line-spacing: 4;");
-        details.getStyleClass().add("text-secondary");
-
-        Label stageNote = new Label(
-            "Stage 5 Complete: All passenger records validated and seats allocated!\n" +
-            "Say 'next' to proceed to Stage 6 (Review Booking, Simulated Payment & Ticket Generation)."
-        );
-        stageNote.getStyleClass().add("chip-confirmed");
-        stageNote.setWrapText(true);
-
-        Button backBtn = new Button("← Modify Details / Seats");
-        backBtn.getStyleClass().add("btn-outline");
-        backBtn.setOnAction(e -> AeroReserveApp.showScreen(this.getView()));
-
-        card.getChildren().addAll(title, details, stageNote, backBtn);
-
-        StackPane wrapper = new StackPane(card);
-        wrapper.setAlignment(Pos.CENTER);
-        wrapper.setPadding(new Insets(40));
-        AeroReserveApp.showScreen(wrapper);
     }
 
     /**

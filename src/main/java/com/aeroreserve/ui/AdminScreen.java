@@ -62,6 +62,9 @@ public class AdminScreen {
      * Constructs the Admin Screen.
      */
     public AdminScreen() {
+        if (AeroReserveApp.headerBar != null) {
+            AeroReserveApp.headerBar.setActiveTab("ADMIN");
+        }
         createUI();
     }
 

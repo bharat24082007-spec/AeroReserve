@@ -31,23 +31,19 @@ public class SampleDataLoader {
      */
     public static void seedData(AuthService authService, FlightService flightService) {
 
-        // ── Only seed if flights file is empty / missing ──
-        // This prevents duplicate data on every restart
-        File flightsFile = new File("data/flights.csv");
-        if (flightsFile.exists() && flightsFile.length() > 0) {
-            System.out.println("[SampleDataLoader] Data already seeded — skipping.");
-            return;
+        // ── Seed users if missing or empty ──
+        File usersFile = new File("data/users.csv");
+        if (!usersFile.exists() || usersFile.length() == 0) {
+            System.out.println("[SampleDataLoader] Seeding default admin and customer accounts...");
+            seedUsers(authService);
         }
 
-        System.out.println("[SampleDataLoader] Seeding sample data...");
-
-        // ── Seed users ──
-        seedUsers(authService);
-
-        // ── Seed flights ──
-        seedFlights(flightService);
-
-        System.out.println("[SampleDataLoader] Done! 2 users + 20 flights loaded.");
+        // ── Seed flights if missing or empty ──
+        File flightsFile = new File("data/flights.csv");
+        if (!flightsFile.exists() || flightsFile.length() == 0) {
+            System.out.println("[SampleDataLoader] Seeding 20 domestic flights across major routes...");
+            seedFlights(flightService);
+        }
     }
 
     // ── Users ─────────────────────────────────────────────────────────────────

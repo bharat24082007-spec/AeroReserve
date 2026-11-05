@@ -56,6 +56,9 @@ public class SearchScreen {
      * Constructor builds the search interface.
      */
     public SearchScreen() {
+        if (AeroReserveApp.headerBar != null) {
+            AeroReserveApp.headerBar.setActiveTab("SEARCH");
+        }
         createUI();
     }
 
