@@ -1,0 +1,1207 @@
+/* ============================================================
+   aeroreserve.css  —  Airline Booking Platform Design System
+   Inspired by MakeMyTrip, Google Flights, and Skyscanner
+   Palette:
+     Header & Slate: #1A1D36 (Midnight Indigo) / #2B2D7C
+     Primary Button: #2B2D7C (Royal Indigo)
+     Action Accent:  #FF6D00 (Vibrant Flame Orange - MakeMyTrip style)
+     Page Canvas:    #F4F6F9 (Clean Professional Airline Slate)
+     Cards:          #FFFFFF (Pure White with crisp 1px borders)
+     Borders:        #E5E7EB
+     Text Dark:      #111827 / #1F2937
+     Text Muted:     #6B7280 / #9CA3AF
+     Available Seat: #ECFDF5 (Emerald Border #10B981)
+     Selected Seat:  #FF6D00 (Vivid Orange)
+   ============================================================ */
+
+/* ── Global Typography & Canvas ─────────────────────────────── */
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", -apple-system, sans-serif;
+}
+
+.app-root {
+    /* Clean, bright, professional light slate background (Google Flights style) */
+    -fx-background-color: #F4F6F9;
+}
+
+/* ── Sleek Airline Header Bar ───────────────────────────────── */
+
+.app-header {
+    -fx-background-color: #1A1D36;
+    -fx-padding: 0 32 0 32;
+    -fx-pref-height: 62;
+    -fx-min-height: 62;
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 8, 0, 0, 2);
+}
+
+.header-logo-text {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+}
+
+.header-nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.80);
+    -fx-font-size: 14;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+}
+
+.header-nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #FFFFFF;
+}
+
+.header-nav-btn-active {
+    -fx-background-color: rgba(255, 255, 255, 0.16);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+}
+
+.header-user-name {
+    -fx-text-fill: rgba(255, 255, 255, 0.90);
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.btn-outline-white {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.50);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.btn-outline-white:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: #FFFFFF;
+}
+
+/* ── Clean Airline White Cards (12px radius, soft elevation) ── */
+
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 2);
+    -fx-padding: 24;
+}
+
+.card-sm {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 8, 0, 0, 1);
+    -fx-padding: 16;
+}
+
+/* ── Action Buttons (MakeMyTrip / Google Flights style) ──────── */
+
+/* Accent Action — Punchy MakeMyTrip Orange #FF6D00 */
+.btn-accent {
+    -fx-background-color: #FF6D00;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 11 30 11 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 109, 0, 0.35), 8, 0, 0, 2);
+}
+
+.btn-accent:hover {
+    -fx-background-color: #E65100;
+    -fx-effect: dropshadow(gaussian, rgba(230, 81, 0, 0.45), 10, 0, 0, 3);
+}
+
+.btn-accent:pressed {
+    -fx-background-color: #BF360C;
+    -fx-translate-y: 1;
+}
+
+/* Primary — Deep Indigo #2B2D7C */
+.btn-primary {
+    -fx-background-color: #2B2D7C;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 11 30 11 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(43, 45, 124, 0.25), 8, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #1F2161;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #161748;
+    -fx-translate-y: 1;
+}
+
+/* Outline Button */
+.btn-outline {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #2B2D7C;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: #2B2D7C;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-outline:hover {
+    -fx-background-color: #F0F3FF;
+}
+
+.btn-outline:pressed {
+    -fx-translate-y: 1;
+}
+
+/* Danger Button */
+.btn-danger {
+    -fx-background-color: #DC2626;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #B91C1C;
+}
+
+.btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2B2D7C;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 4 0 4 0;
+}
+
+.btn-link:hover {
+    -fx-text-fill: #FF6D00;
+}
+
+/* ── Modern Form Controls ───────────────────────────────────── */
+
+.text-input-custom {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14 10 14;
+    -fx-font-size: 14;
+    -fx-pref-height: 44;
+}
+
+.text-input-custom:hover {
+    -fx-border-color: #9CA3AF;
+}
+
+.text-input-custom:focused {
+    -fx-border-color: #2B2D7C;
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(43, 45, 124, 0.15), 6, 0, 0, 0);
+}
+
+.date-picker-custom {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-height: 44;
+    -fx-font-size: 14;
+}
+
+.date-picker-custom > .text-field {
+    -fx-background-color: transparent;
+    -fx-padding: 10 8 10 14;
+}
+
+.date-picker-custom:focused {
+    -fx-border-color: #2B2D7C;
+}
+
+.combo-custom {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-height: 44;
+    -fx-font-size: 14;
+    -fx-cursor: hand;
+}
+
+.combo-custom:focused {
+    -fx-border-color: #2B2D7C;
+}
+
+/* ── Modern Dropdown Popups (Airline Style) ─────────────────── */
+
+.combo-box-popup .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 14, 0, 0, 4);
+    -fx-padding: 4;
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 9 14;
+    -fx-background-color: transparent;
+    -fx-text-fill: #111827;
+    -fx-font-size: 13;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #EFF6FF;
+    -fx-text-fill: #1D4ED8;
+    -fx-background-radius: 6;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #2B2D7C;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 6;
+}
+
+/* ── Modern DatePicker Popup (Airline Style) ─────────────────── */
+
+.date-picker-popup {
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 16, 0, 0, 4);
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #1A1D36;
+    -fx-padding: 8;
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #EFF6FF;
+    -fx-text-fill: #1D4ED8;
+}
+
+.date-picker-popup .selected {
+    -fx-background-color: #FF6D00;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ── Clean Typography Hierarchy ─────────────────────────────── */
+
+.page-title {
+    -fx-font-size: 26;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.section-title {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.card-title {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.field-label {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.label-error {
+    -fx-text-fill: #DC2626;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.label-success {
+    -fx-text-fill: #059669;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.label-hint {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 12;
+}
+
+.text-secondary {
+    -fx-text-fill: #4B5563;
+    -fx-font-size: 13;
+}
+
+.text-muted {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 12;
+}
+
+/* ── Login Screen ───────────────────────────────────────────── */
+
+.login-bg {
+    /* Clean airline portal background with gentle warmth */
+    -fx-background-color: #EEF2F6;
+}
+
+.login-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 24, 0, 0, 4);
+    -fx-padding: 40 48 40 48;
+}
+
+.login-title {
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1D36;
+}
+
+.login-tagline {
+    -fx-font-size: 14;
+    -fx-text-fill: #6B7280;
+}
+
+.tab-bar {
+    -fx-background-color: #F3F4F6;
+    -fx-background-radius: 8;
+    -fx-padding: 4;
+}
+
+.tab-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.tab-btn:hover {
+    -fx-text-fill: #111827;
+}
+
+.tab-btn-active {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1A1D36;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 4, 0, 0, 1);
+}
+
+/* ── Search Screen (MakeMyTrip Style Hero & Card) ────────────── */
+
+.search-banner {
+    -fx-background-color: #1A1D36;
+    -fx-padding: 32 48 64 48;
+}
+
+.search-banner-title {
+    -fx-font-size: 26;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.search-banner-subtitle {
+    -fx-font-size: 14;
+    -fx-text-fill: rgba(255, 255, 255, 0.75);
+}
+
+.search-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 4);
+    -fx-padding: 28;
+}
+
+.city-input-box {
+    -fx-background-color: #F9FAFB;
+    -fx-background-radius: 8;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-padding: 10 14 10 14;
+    -fx-min-width: 160;
+}
+
+.city-input-box:hover {
+    -fx-border-color: #2B2D7C;
+}
+
+.city-label-small {
+    -fx-font-size: 11;
+    -fx-text-fill: #6B7280;
+    -fx-font-weight: bold;
+}
+
+.city-code-large {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.city-name-label {
+    -fx-font-size: 13;
+    -fx-text-fill: #4B5563;
+}
+
+.swap-btn {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 4, 0, 0, 1);
+    -fx-cursor: hand;
+    -fx-min-width: 38;
+    -fx-min-height: 38;
+    -fx-max-width: 38;
+    -fx-max-height: 38;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2B2D7C;
+}
+
+.swap-btn:hover {
+    -fx-background-color: #F0F3FF;
+    -fx-border-color: #2B2D7C;
+}
+
+.passenger-box {
+    -fx-background-color: #F9FAFB;
+    -fx-background-radius: 8;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-padding: 10 14 10 14;
+    -fx-min-width: 125;
+}
+
+/* ── Results Screen (Google Flights & Skyscanner Style) ──────── */
+
+.filter-sidebar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 8, 0, 0, 1);
+    -fx-padding: 22;
+    -fx-min-width: 280;
+    -fx-max-width: 280;
+}
+
+.filter-section-title {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.flight-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 8, 0, 0, 1);
+    -fx-padding: 20 24 20 24;
+    -fx-cursor: hand;
+}
+
+.flight-card:hover {
+    -fx-border-color: #2B2D7C;
+    -fx-effect: dropshadow(gaussian, rgba(43, 45, 124, 0.12), 12, 0, 0, 2);
+}
+
+.flight-time {
+    -fx-font-size: 26;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.flight-airport {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+}
+
+.flight-duration {
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+}
+
+.flight-line {
+    -fx-background-color: #D1D5DB;
+    -fx-pref-height: 2;
+    -fx-min-height: 2;
+    -fx-max-height: 2;
+}
+
+.flight-dot {
+    -fx-background-color: #2B2D7C;
+    -fx-pref-width: 7;
+    -fx-pref-height: 7;
+    -fx-min-width: 7;
+    -fx-min-height: 7;
+    -fx-background-radius: 4;
+}
+
+/* Airline Name Badge (Clean Sky Blue Tint) */
+.airline-badge {
+    -fx-background-color: #EFF6FF;
+    -fx-border-color: #BFDBFE;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-text-fill: #1D4ED8;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+}
+
+.flight-price {
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.price-per-person {
+    -fx-font-size: 11;
+    -fx-text-fill: #9CA3AF;
+}
+
+.sort-tab-bar {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 8;
+    -fx-padding: 3;
+}
+
+.sort-tab {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4B5563;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 7 20 7 20;
+    -fx-cursor: hand;
+}
+
+.sort-tab:hover {
+    -fx-text-fill: #111827;
+}
+
+.sort-tab-active {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1A1D36;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 4, 0, 0, 1);
+}
+
+/* ── Realistic Aircraft Seat Map (Stage 5) ──────────────────── */
+
+.aircraft-container {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 24 24 12 12;
+    -fx-background-radius: 24 24 12 12;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 12, 0, 0, 2);
+}
+
+/* Base Seat Button */
+.seat-btn {
+    -fx-min-width: 33;
+    -fx-max-width: 33;
+    -fx-min-height: 31;
+    -fx-max-height: 31;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-background-radius: 6 6 4 4;
+    -fx-border-radius: 6 6 4 4;
+    -fx-cursor: hand;
+}
+
+/* Available: Crisp Mint Green */
+.seat-available {
+    -fx-background-color: #ECFDF5;
+    -fx-border-color: #A7F3D0;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #065F46;
+}
+
+.seat-available:hover {
+    -fx-background-color: #D1FAE5;
+    -fx-border-color: #10B981;
+}
+
+/* Selected: Punchy MakeMyTrip Orange #FF6D00 */
+.seat-selected {
+    -fx-background-color: #FF6D00;
+    -fx-border-color: #E65100;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(255, 109, 0, 0.4), 6, 0, 0, 1);
+}
+
+/* Extra Legroom: Warm Golden Amber */
+.seat-extra-legroom {
+    -fx-background-color: #FFFBEB;
+    -fx-border-color: #FDE68A;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #92400E;
+}
+
+.seat-extra-legroom:hover {
+    -fx-background-color: #FEF3C7;
+    -fx-border-color: #F59E0B;
+}
+
+/* Booked: Neutral Slate Muted */
+.seat-booked {
+    -fx-background-color: #F3F4F6;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-text-fill: #9CA3AF;
+    -fx-cursor: default;
+}
+
+.row-number-label {
+    -fx-font-size: 11;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9CA3AF;
+    -fx-min-width: 24;
+    -fx-alignment: center;
+}
+
+/* ── Review & Payment Screen (Stage 6) ──────────────────────── */
+
+.fare-summary-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 2);
+    -fx-padding: 24;
+    -fx-min-width: 310;
+    -fx-max-width: 330;
+}
+
+.fare-row-label {
+    -fx-font-size: 14;
+    -fx-text-fill: #4B5563;
+}
+
+.fare-row-value {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.fare-total-label {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.fare-total-value {
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2B2D7C;
+}
+
+.payment-method-btn {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: #374151;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 14 20 14 20;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-max-width: 10000;
+}
+
+.payment-method-btn:hover {
+    -fx-border-color: #2B2D7C;
+    -fx-background-color: #F8FAFC;
+}
+
+.payment-method-btn-selected {
+    -fx-background-color: #EFF6FF;
+    -fx-border-color: #2B2D7C;
+    -fx-border-width: 2;
+    -fx-text-fill: #2B2D7C;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+/* ── Boarding Pass / Confirmation (Stage 6) ─────────────────── */
+
+.boarding-pass {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 24, 0, 0, 4);
+}
+
+.bp-top-section {
+    -fx-background-color: #1A1D36;
+    -fx-background-radius: 15 15 0 0;
+    -fx-padding: 32 40 32 40;
+}
+
+.bp-airport-code {
+    -fx-font-size: 52;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.bp-airport-name {
+    -fx-font-size: 13;
+    -fx-text-fill: rgba(255, 255, 255, 0.75);
+}
+
+.bp-flight-arrow {
+    -fx-font-size: 28;
+    -fx-text-fill: rgba(255, 255, 255, 0.50);
+}
+
+.bp-bottom-section {
+    -fx-padding: 24 40 32 40;
+}
+
+.bp-field-label {
+    -fx-font-size: 11;
+    -fx-text-fill: #9CA3AF;
+    -fx-font-weight: bold;
+}
+
+.bp-field-value {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.bp-barcode-strip {
+    -fx-background-color: #111827;
+    -fx-background-radius: 0 0 15 15;
+    -fx-pref-height: 48;
+}
+
+/* Status Chips */
+.chip-confirmed {
+    -fx-background-color: #DCFCE7;
+    -fx-border-color: #86EFAC;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 16 6 16;
+    -fx-text-fill: #15803D;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+.chip-cancelled {
+    -fx-background-color: #FEE2E2;
+    -fx-border-color: #FCA5A5;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 6 16 6 16;
+    -fx-text-fill: #B91C1C;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+/* ── My Bookings (Stage 7) ──────────────────────────────────── */
+
+.booking-row-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 6, 0, 0, 1);
+    -fx-padding: 16 22 16 22;
+    -fx-cursor: hand;
+}
+
+.booking-row-card:hover {
+    -fx-border-color: #2B2D7C;
+}
+
+/* ── Admin Panel Sidebar (Stage 7) ──────────────────────────── */
+
+.admin-sidebar {
+    -fx-background-color: #1A1D36;
+    -fx-pref-width: 220;
+    -fx-padding: 24 0 24 0;
+}
+
+.admin-nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.70);
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24 12 24;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-max-width: 10000;
+    -fx-background-radius: 0;
+}
+
+.admin-nav-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #FFFFFF;
+}
+
+.admin-nav-btn-active {
+    -fx-background-color: rgba(255, 109, 0, 0.15);
+    -fx-text-fill: #FF6D00;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #FF6D00;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-radius: 0;
+}
+
+/* ── Utility & Controls ─────────────────────────────────────── */
+
+.scroll-transparent {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-transparent > .viewport {
+    -fx-background-color: transparent;
+}
+
+.divider {
+    -fx-background-color: #E5E7EB;
+    -fx-pref-height: 1;
+}
+
+/* ── Modern CheckBox Component (Clean Airline Style) ──────── */
+
+.check-box {
+    -fx-font-size: 13;
+    -fx-text-fill: #374151;
+    -fx-cursor: hand;
+    -fx-spacing: 10;
+}
+
+.check-box > .box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-min-width: 18;
+    -fx-min-height: 18;
+    -fx-max-width: 18;
+    -fx-max-height: 18;
+    -fx-alignment: center;
+}
+
+.check-box:hover > .box {
+    -fx-border-color: #2B2D7C;
+}
+
+.check-box:selected > .box {
+    -fx-background-color: #2B2D7C;
+    -fx-border-color: #2B2D7C;
+}
+
+.check-box:selected > .box > .mark {
+    -fx-background-color: #FFFFFF;
+    -fx-shape: "M3.8 7L1.4 4.6 0 6 3.8 9.8 11.8 1.8 10.4 0.4z";
+    -fx-scale-shape: true;
+    -fx-pref-width: 10;
+    -fx-pref-height: 8;
+}
+
+/* ── Modern RadioButton Component (Airline Style) ───────────── */
+
+.radio-button {
+    -fx-font-size: 13;
+    -fx-text-fill: #374151;
+    -fx-cursor: hand;
+    -fx-spacing: 10;
+}
+
+.radio-button > .radio {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-min-width: 18;
+    -fx-min-height: 18;
+    -fx-max-width: 18;
+    -fx-max-height: 18;
+    -fx-alignment: center;
+}
+
+.radio-button:hover > .radio {
+    -fx-border-color: #FF6D00;
+}
+
+.radio-button:selected > .radio {
+    -fx-border-color: #FF6D00;
+    -fx-border-width: 2;
+}
+
+.radio-button:selected > .radio > .dot {
+    -fx-background-color: #FF6D00;
+    -fx-background-radius: 50;
+    -fx-min-width: 8;
+    -fx-min-height: 8;
+    -fx-max-width: 8;
+    -fx-max-height: 8;
+}
+
+/* ── Modern Slider Component ────────────────────────────────── */
+
+.slider {
+    -fx-cursor: hand;
+}
+
+.slider .track {
+    -fx-background-color: #E5E7EB;
+    -fx-pref-height: 6;
+    -fx-background-radius: 3;
+}
+
+.slider .thumb {
+    -fx-background-color: #2B2D7C;
+    -fx-pref-width: 18;
+    -fx-pref-height: 18;
+    -fx-background-radius: 50;
+    -fx-effect: dropshadow(gaussian, rgba(43, 45, 124, 0.35), 6, 0, 0, 1);
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #FF6D00;
+    -fx-effect: dropshadow(gaussian, rgba(255, 109, 0, 0.45), 8, 0, 0, 2);
+}
+
+/* ── Sleek Slim Modern Scrollbars (MakeMyTrip / Web style) ───── */
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-height: 8;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #D1D5DB;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9CA3AF;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* ── Stage 7: Admin Dashboard & Stat Cards ─────────────────── */
+
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 20 22 20 22;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+}
+
+.stat-card:hover {
+    -fx-border-color: #2B2D7C;
+    -fx-effect: dropshadow(gaussian, rgba(43, 45, 124, 0.10), 12, 0, 0, 3);
+}
+
+.stat-value {
+    -fx-font-size: 26;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.stat-label {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+}
+
+.stat-subtext {
+    -fx-font-size: 11;
+    -fx-text-fill: #9CA3AF;
+}
+
+.stat-icon-badge {
+    -fx-background-color: #EFF6FF;
+    -fx-background-radius: 10;
+    -fx-min-width: 44;
+    -fx-min-height: 44;
+    -fx-max-width: 44;
+    -fx-max-height: 44;
+    -fx-alignment: center;
+}
+
+.stat-icon-text {
+    -fx-font-size: 20;
+}
+
+/* ── Admin Navigation Tabs ──────────────────────────────────── */
+
+.admin-tabs-container {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 32 0 32;
+}
+
+.admin-tab {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 14 20 14 20;
+    -fx-cursor: hand;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-width: 0 0 3 0;
+    -fx-background-radius: 0;
+}
+
+.admin-tab:hover {
+    -fx-text-fill: #2B2D7C;
+}
+
+.admin-tab-active {
+    -fx-text-fill: #2B2D7C;
+    -fx-border-color: transparent transparent #FF6D00 transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+/* ── PNR and Metadata Badges ────────────────────────────────── */
+
+.badge-pnr {
+    -fx-background-color: #1A1D36;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 6;
+}
+
+.badge-route {
+    -fx-background-color: #F3F4F6;
+    -fx-text-fill: #374151;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 6;
+}
+
+/* ── Empty State Card ───────────────────────────────────────── */
+
+.empty-state-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-padding: 60 40 60 40;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.04), 10, 0, 0, 2);
+}
+
+.empty-state-icon {
+    -fx-font-size: 48;
+    -fx-text-fill: #9CA3AF;
+}
+
+.empty-state-title {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.empty-state-desc {
+    -fx-font-size: 13;
+    -fx-text-fill: #6B7280;
+    -fx-text-alignment: center;
+}

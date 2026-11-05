@@ -1,0 +1,18 @@
+# Maven build target directory
+target/
+*.class
+
+# Log files
+*.log
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS generated files
+.DS_Store
+Thumbs.db

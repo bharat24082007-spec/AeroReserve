@@ -1,0 +1,19 @@
+=======================================================
+        AERORESERVE — BOOKING CONFIRMATION
+=======================================================
+
+Booking Ref : ARB-00001
+Flight      : 6E-2134 | HYD -> BOM
+Date        : 2025-12-15
+Departure   : 06:30  Arrival: 08:20
+Passengers  : 1
+  1. Rahul Sharma | 28 | Male | 9876543210 | rahul@example.com
+Seats       : 10A 
+Baggage     : 15 kg
+Total Fare  : INR 3950.0
+Status      : CONFIRMED
+Payment     : CREDIT_CARD | INR 3950.0 | SUCCESS
+
+=======================================================
+       Thank you for flying with AeroReserve!
+=======================================================
